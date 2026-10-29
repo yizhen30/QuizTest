@@ -1,0 +1,89 @@
+{
+  "title": "把個脈吧！TWCM IG 小測驗",
+  "questions": [
+    {
+      "text": "為什麼中醫不能直接套用西醫導向的 FHIR 規範？",
+      "options": ["中醫資料不需要跨院交換", "舌象、脈象等概念容易產生語意失真", "FHIR 不支援中文", "中醫病歷欄位太少"],
+      "answer": 1,
+      "seconds": 20,
+      "explanation": "四大痛點之一是「語意複雜性」：西醫導向的規範套在舌象、脈象上，意思容易跑掉。"
+    },
+    {
+      "text": "某中醫概念目前找不到可對應的國際標準碼，依標準碼採用規範應該怎麼做？",
+      "options": ["改用院內自訂代碼", "不傳這個欄位", "使用國家／行政區標準碼", "只填自由文字"],
+      "answer": 2,
+      "seconds": 20,
+      "explanation": "原則：能用國際標準碼就用；無法對應時，才使用國家／行政區標準碼。"
+    },
+    {
+      "text": "檢驗報告完成後，實驗室系統主動通知 EMR 來讀取資料，這是哪種通訊方式？",
+      "options": ["gRPC", "SFTP", "WebSocket", "Webhook"],
+      "answer": 3,
+      "seconds": 20,
+      "explanation": "Webhook 是事件驅動的非同步做法；gRPC 的例子是雲端處方比對。"
+    },
+    {
+      "text": "FHIR IG 和傳統 PDF 規格書最大的差別是？",
+      "options": ["人可讀，也機器可讀，可以驗證實作符合度", "只給工程師看", "頁數比較少", "發布後就不能更新"],
+      "answer": 0,
+      "seconds": 20,
+      "explanation": "規格設定完成，就等於驗證規則也寫完了。"
+    },
+    {
+      "text": "某個選填欄位標示為 Must Support，代表什麼？",
+      "options": ["每筆資料都一定要填", "有這筆資料就要傳送，FHIR Server 也要能存下來", "可以忽略不傳", "只有 Server 端需要理會"],
+      "answer": 1,
+      "seconds": 20,
+      "explanation": "Must Support 不等於必填：有資料就要傳，Server 也要有能力儲存。"
+    },
+    {
+      "text": "欄位綁定強度是 Extensible，但院內代碼在值集裡找不到合適的，怎麼辦？",
+      "options": ["挑一個最接近的代碼硬填", "確認真的沒有合適代碼後，才可改用其他代碼系統", "一律不能上傳", "一定只能填文字"],
+      "answer": 1,
+      "seconds": 20,
+      "explanation": "Required 必須用值集內的代碼；Extensible 確認沒有合適的，才能用其他代碼系統。"
+    },
+    {
+      "text": "病人的 identifier 同時有身分證號和病歷號，IG 用什麼方式定義這種「同一概念、不同的值」？",
+      "options": ["Extension", "Constraint", "Slice", "ConceptMap"],
+      "answer": 2,
+      "seconds": 20,
+      "explanation": "同一個概念但可能存在不同的值，就用 Slice 切開定義。"
+    },
+    {
+      "text": "關於欄位的術語綁定，下列何者正確？",
+      "options": ["綁定代碼系統，填入值集的值", "綁定值集，填入代碼系統中的代碼", "綁定和填入都是值集", "綁定和填入都是概念對應"],
+      "answer": 1,
+      "seconds": 20,
+      "explanation": "欄位綁定的是「值集」，但填入的值是「代碼系統」中的代碼。"
+    },
+    {
+      "text": "院內自訂的中醫證型代碼要對應到標準代碼系統，IG 裡用哪個元件？",
+      "options": ["ValueSet", "CodeSystem", "CapabilityStatement", "ConceptMap"],
+      "answer": 3,
+      "seconds": 20,
+      "explanation": "概念對應（ConceptMap）負責把自訂代碼對應到標準代碼系統。"
+    },
+    {
+      "text": "把藥品使用頻率從 QID 改成 TID 後，還要記得改什麼？",
+      "options": ["system 一定要跟著改", "病人姓名", "人可讀的 text 內容", "Package Name"],
+      "answer": 2,
+      "seconds": 20,
+      "explanation": "這題 system 不用改；驗證程式只檢查 text 有沒有值，不會發現內容是錯的。"
+    },
+    {
+      "text": "要修改一筆已經存在的 Patient 資料，應該用哪個 HTTP 動作？",
+      "options": ["POST", "GET", "PUT", "DELETE"],
+      "answer": 2,
+      "seconds": 20,
+      "explanation": "POST 新增、GET 查詢、PUT 修改、DELETE 刪除。"
+    },
+    {
+      "text": "使用 HL7 線上驗證器驗證 TWCM 的資料，前提是什麼？",
+      "options": ["先手動下載 Package", "IG 須已註冊，並開放國外連入", "一定要先用 Postman 上傳", "只能驗證 Patient"],
+      "answer": 1,
+      "seconds": 20,
+      "explanation": "線上驗證不用手動下載 Package，但 IG 必須已註冊並開放國外連入。"
+    }
+  ]
+}

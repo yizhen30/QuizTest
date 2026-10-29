@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>主持人｜課堂小測驗</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="host">
+<header class="topbar">
+  <div class="brand"><span class="seal">脈</span><span class="t" id="title">課堂小測驗</span></div>
+  <nav class="tabs hidden" id="tabs">
+    <button data-tab="play" class="on">主持</button>
+    <button data-tab="edit">題目編輯</button>
+  </nav>
+  <span class="chip hidden" id="online"></span>
+</header>
+<main>
+  <section id="pin" class="pinbox card">
+    <h2 style="margin-top:0">主持人登入</h2>
+    <p class="muted">輸入啟動時設定的主持密碼（預設 1234）</p>
+    <form id="pf">
+      <input class="field" id="pinin" type="password" inputmode="numeric" placeholder="主持密碼" autocomplete="off">
+      <div class="err" id="pinerr"></div>
+      <button class="btn" type="submit" style="width:100%">進入</button>
+    </form>
+  </section>
+  <section id="play" class="stage hidden"></section>
+  <section id="edit" class="editor hidden"></section>
+</main>
+<script src="rt.js"></script>
+<script src="qrcode.js"></script>
+<script src="host.js"></script>
+</body>
+</html>

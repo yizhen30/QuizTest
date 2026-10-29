@@ -1,0 +1,2 @@
+Gson 2.10.1 — Copyright Google Inc. — Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+qrcode-generator 1.5.2 — Copyright (c) 2009 Kazuhiko Arase — MIT License (header in webapp/qrcode.js)
